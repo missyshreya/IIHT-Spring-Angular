@@ -17,6 +17,16 @@ public class RefDemo {
 		//we are referencing the method projectProgress from some other class Project and not calling it
 		
 		iWork.doProject();
+		
+		/*Runnable runnable= Project::threadTask;
+		Thread t1= new Thread(runnable);
+		t1.start();*/
+		
+		Runnable runnable= Project::oddNumberPrinter;
+		Thread t1= new Thread(runnable);
+		t1.start();
+		
+		
 	}
 
 }
