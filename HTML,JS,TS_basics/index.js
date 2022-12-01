@@ -167,3 +167,7 @@ var name="Shreya"
     //create an object without  using the cosntructor 
     let tommy= new Animal("German shephard")
     console.log(Animal.display());
+
+    function Greet(){
+        alert("Greetings fellow developer!!")
+    }
