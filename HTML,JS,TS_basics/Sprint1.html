@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        body{
+            background-color: rgb(205, 235, 150);  
+        }
+        .myform{
+           
+            border-radius: 7px;
+           
+            background-image: linear-gradient(
+             135deg,
+             rgb(240, 146, 208),
+             rgb(79, 216, 226));
+        }
+        .d1{                       
+  max-width: 2000px;
+  padding: 200px;
+        }
+        .d-left{
+            float:left;  
+        }
+        .d-center{
+            float: none;
+            padding-left:315px;
+
+        }
+        .d-right{
+            float:right;        
+        }
+        button{
+            transition-duration: 0.4s;
+            background-color:rgb(101, 125, 206);
+            padding: 0.25em 0.75em;
+            min-width: 20ch;
+            min-height: 40px;
+            cursor:pointer;
+            border:none;
+            font-size: 20px;
+            box-shadow: 3px 3px 8px 0#000;
+            border-radius: 5px;
+            font-weight: bold;            
+        }
+        button:hover{           
+            color:rgb(217, 235, 117);           
+        }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        /*to remove arrows from input number box*/
+        -webkit-appearance: none;
+         margin: 0;
+        }
+        input{
+            border-radius: 5px;
+            height: 17px;
+        }
+
+    </style>
+</head>
+<body>
+    <script src="Sprint1.js"></script>
+<form class="myform">
+    <div class="d1">
+        <h1>Registration</h1>
+        <h3>Personal Details</h3>
+        <br/>
+
+        <div>
+            <div class="d-left">
+                <label for="name">Full Name </label><br/>
+                <input type="text" id="name" placeholder="Enter your name" />
+            </div>
+
+            <div class="d-right">
+                <label for="email">Email </label><br/>
+                <input type="email" id="email" placeholder="Enter your email" />
+            </div>
+            <div class="d-center">
+                <label for="DOB">Date of Birth </label><br/>
+                <input type="date" id="DOB" style="width: 170px;" placeholder="Enter birth date" />
+            </div>
+        </div>
+        <br/>
+        <div>
+            <div class="d-left">
+                <label for="mob">Mobile Number </label><br/>
+                <input type="number" id="mob" placeholder="Enter mobile number" />
+            </div>
+            <div class="d-right">
+                <label for="occ">Occupation </label><br/>
+                <input type="text" id="occ" placeholder="Enter occupation" />
+            </div>
+            <div class="d-center">
+                <label for="gen">Gender </label><br/>
+                <input type="text" id="gen" placeholder="Enter your gender"/>
+            </div>
+        </div>
+        <h3>Identity Details</h3>
+        <br/>
+        <div>
+            <div class="d-left">
+                <label for="idtyp">ID Type </label><br/>
+                <input type="text" id="idtyp" placeholder="Enter ID type" />
+            </div>
+            <div class="d-right">
+                <label for="iauth">Issue Authority </label><br/>
+                <input type="text" id="iauth" placeholder="Enter issue department" />
+            </div>
+            <div class="d-center">
+                <label for="idno">ID Number </label><br/>
+                <input type="number" id="idno" placeholder="Enter ID number"/>
+            </div>
+        </div>
+        <br/>
+        <div>
+            <div class="d-left">
+                <label for="idate">Issue Date </label><br/>
+                <input type="date" id="idate" style="width: 170px;" placeholder="Enter ID issue date" />
+            </div>
+            <div class="d-right">
+                <label for="idexp">Expiry Date </label><br/>
+                <input type="date" id="idexp" style="width: 170px;" placeholder="Enter ID expiry date"/>
+            </div>
+            <div class="d-center">
+                <label for="istate">Issue State </label><br/>
+                <input type="text" id="istate" placeholder="Enter ID issue state" />
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+       <button type="button" onclick="getValue()">Next ⇨</button>
+</form>
+</body>
+</html>
