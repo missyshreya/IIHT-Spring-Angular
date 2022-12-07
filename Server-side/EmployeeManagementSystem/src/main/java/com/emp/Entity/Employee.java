@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Employee {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO) // restricts duplicate id makes sure it isthe primary key
+	@GeneratedValue(strategy = GenerationType.AUTO) // restricts duplicate id makes sure it is the primary key its generating the keys or id and they will be unique
 	private Integer id;
 	private String ename;
 	private String eposition;
