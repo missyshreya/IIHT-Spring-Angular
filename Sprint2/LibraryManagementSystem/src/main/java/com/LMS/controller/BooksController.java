@@ -25,11 +25,6 @@ public class BooksController {
 	@Autowired
 	private IBooksService booksService;
 	
-	/*@PostMapping("/add/book")
-	public ResponseEntity<?> createABook(@RequestBody Books b){
-		return new ResponseEntity<>(booksService.createABook(b), HttpStatus.OK);
-	}*/
-	
 	@PostMapping("/add/book")
 	public Long createABook(@RequestBody Books b){  //creating a new book and returning that book
 		return booksService.createABook(b);
