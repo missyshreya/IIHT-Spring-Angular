@@ -1,11 +1,18 @@
 {
-  "users" :[
-      {
-          "firstname":"Emily",
-          "lastname":"Joseph",
-          "age": 50,
-          "email": "ej@gmail.com",
-          "id": 1
-      }
+  "users": [
+    {
+      "firstname": "Emily",
+      "lastname": "Joseph",
+      "age": 50,
+      "email": "ej@gmail.com",
+      "id": 1
+    },
+    {
+      "firstname": "shreya",
+      "lastname": "sen",
+      "age": 24,
+      "email": "shreya7sen7@gmail.com",
+      "id": 2
+    }
   ]
 }
