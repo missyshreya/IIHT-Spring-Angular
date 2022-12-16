@@ -6,6 +6,20 @@
       "age": 24,
       "email": "shreya7sen7@gmail.com",
       "id": 2
+    },
+    {
+      "firstname": "Priya",
+      "lastname": "Das",
+      "age": 16,
+      "email": "pd@gmail.com",
+      "id": 3
+    },
+    {
+      "firstname": "Ranvir",
+      "lastname": "Gupta",
+      "age": 21,
+      "email": "rd@gmail.com",
+      "id": 4
     }
   ]
 }
