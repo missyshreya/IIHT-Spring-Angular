@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import User from '../Entity/user';
 
 const BASE_URL= 'http://localhost:5000/users';
 
@@ -8,15 +9,23 @@ const BASE_URL= 'http://localhost:5000/users';
 })
 export class UserService {
 
-  saveUser(user: {
+  saveUser(user: {   //saveuser function
     firstname: String;
     lastname: String;
     age: number;
     gender: String;
     email: String; 
   }){
-    return this.http.post(BASE_URL, user);
+    return this.http.post(BASE_URL, user); 
   }
 
-  constructor(private http: HttpClient) { }
+  getUsers(){
+    return this.http.get(BASE_URL);    
+  }
+
+  deleteUsers(user: any){
+    return this.http.delete(BASE_URL+"/"+user.id); 
+  }
+  constructor(private http: HttpClient) { } 
+  // injecting httpclient
 }

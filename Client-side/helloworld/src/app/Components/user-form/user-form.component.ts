@@ -13,7 +13,7 @@ export class UserFormComponent implements OnInit {
 
 user: User= new User();
   save(){
-    const observables= this.userService.saveUser(this.user);
+    const observables= this.userService.saveUser(this.user); //calling saveuser function
     observables.subscribe(
       (response: any) =>{
         console.log(response);
@@ -23,7 +23,7 @@ user: User= new User();
       }
     )    
   }
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService) {} //injecting userservice
   ngOnInit(): void {}
 }
 

@@ -4,8 +4,9 @@ import { AboutComponent } from './Components/about/about.component';
 import { ContactComponent } from './Components/contact/contact.component';
 import { HomeComponent } from './Components/home/home.component';
 import { UserFormComponent } from './Components/user-form/user-form.component';
+import { RegUsersComponent } from './Components/reg-users/reg-users.component';
 
-const routes: Routes = [{ path: "", component: HomeComponent }, { path: 'register', component: UserFormComponent }, { path: 'about', component: AboutComponent },  { path: 'contact', component: ContactComponent}]
+const routes: Routes = [{ path: "", component: HomeComponent }, { path: 'register', component: UserFormComponent }, { path: 'about', component: AboutComponent },  { path: 'contact', component: ContactComponent}, { path: 'reg', component: RegUsersComponent}]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
