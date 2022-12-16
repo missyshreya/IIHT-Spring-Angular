@@ -5,6 +5,6 @@
         <div class="fw-bold">{{u.firstname}}</div>
        {{u.email}}
       </div>
-      <button type="button" class="btn btn-outline-danger">Delete</button>
+      <button type="button" (click)="deleteRow(u,i)" class="btn btn-outline-danger">Delete</button>
     </li>
   </ol>
