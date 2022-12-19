@@ -5,10 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { TodoReducer } from './reducers/todo.reducer';
+import { TodoComponentComponent } from './Components/todo-component/todo-component.component';
+import { AddTodoComponentComponent } from './Components/add-todo-component/add-todo-component.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TodoComponentComponent,
+    AddTodoComponentComponent
   ],
   imports: [
     BrowserModule,
