@@ -1,15 +1,18 @@
-.navbar-dark .nav-item .nav-link {
-  color: #fff;
+.btn {
+  padding: .50rem 2.5rem .45rem;
 }
 
-.navbar-dark .nav-item .nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-  border-radius: 0.25rem;
-  color: #fff;
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #c471f5;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgba(196, 113, 245, 1), rgba(250, 113, 205, 1));
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgb(99, 97, 97), rgb(18, 5, 14))
 }
 
-.fa-li {
-  position: relative;
-  left: 0;
+#navbarSupportedContent{
+  font-size:larger;
 }
