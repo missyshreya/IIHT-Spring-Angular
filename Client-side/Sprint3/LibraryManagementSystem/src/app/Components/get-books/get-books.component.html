@@ -1,1 +1,24 @@
-<p>get-books works!</p>
+<div class="container mt-5">
+    <table class="table table-bordered mt-5">
+        <thead>
+          <tr style="background-color: rgb(75, 61, 61); color: aliceblue; font-size: large;">
+            <th>Book Name</th>
+            <th>Author Name</th>
+            <th>Price</th>
+            <th>Genre</th>
+            <th>Borrowed Status</th>
+            <th>Remove</th>
+          </tr>
+        </thead>
+        <tbody class="tbody">
+          <tr *ngFor="let book of bookdetails">
+            <td>{{book.bookName}}</td>
+            <td>{{book.authorName}}</td>
+            <td>{{book.price}}</td>
+            <td>{{book.genre}}</td>
+            <td>{{book.borrowedStatus}}</td>
+            <td><button type="button" class="btn btn-danger" (click)="deleteBook(book)"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+          </tr>
+        </tbody>
+      </table>
+</div>
