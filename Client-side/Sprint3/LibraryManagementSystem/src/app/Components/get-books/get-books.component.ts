@@ -20,7 +20,7 @@ export class GetBooksComponent implements OnInit {
       },
       (err) => {
         console.log(err);
-        alert("Book Not Deleted,Service Down");
+        alert("Sorry the book hasnt been deleted");
       }
     );
   }
