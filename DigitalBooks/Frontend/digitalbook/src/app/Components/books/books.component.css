@@ -1,0 +1,16 @@
+body {
+    min-height:100vh;
+ }
+ 
+ .flex-fill {
+    flex:1 1 auto;
+ }
+
+ .container mb-6{
+    margin-bottom: 2000px;
+    position: relative;
+ }
+
+ .card-header text-center text-center bg-info text-white{
+    background-color: blueviolet;
+ }

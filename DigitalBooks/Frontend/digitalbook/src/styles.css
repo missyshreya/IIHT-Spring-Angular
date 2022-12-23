@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background-image: url('https://th.bing.com/th/id/OIP.kbLJujaQgaWIXBjksvq5agHaEo?w=305&h=190&c=7&r=0&o=5&dpr=1.1&pid=1.7');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+nav, footer{
+    flex: none;
+}
+
+main{
+    overflow-y:scroll;
+    -webkit-overflow-scrolling: touch;
+    flex: auto;
+}

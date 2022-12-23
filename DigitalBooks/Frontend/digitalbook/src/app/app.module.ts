@@ -17,6 +17,7 @@ import { CreateNewBookComponent } from './Components/create-new-book/create-new-
 import { LoginComponent } from './Components/login/login.component';
 import { HeaderComponent } from './Components/header/header.component';
 import { HomeComponent } from './Components/home/home.component';
+import { FooterComponent } from './Components/footer/footer.component';
 
 
 
@@ -32,7 +33,8 @@ import { HomeComponent } from './Components/home/home.component';
     CreateNewBookComponent,
     LoginComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

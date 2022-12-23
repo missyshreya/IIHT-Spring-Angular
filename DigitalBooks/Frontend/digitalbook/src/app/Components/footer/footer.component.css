@@ -1,0 +1,4 @@
+.bg-dark text-center text-white{
+    position:fixed;
+    background: linear-gradient(to right, rgb(232, 137, 194), rgb(89, 85, 211));
+}
