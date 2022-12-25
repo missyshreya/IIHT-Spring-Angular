@@ -1,11 +1,9 @@
 package com.digitalbooks.user.dto;
 
-
 public class BooksWithByteFile {
 
+	public byte[] file;
 
-    public byte[] file; 
-	
 	private Books books;
 
 	public BooksWithByteFile(byte[] file, Books books) {
@@ -33,6 +31,5 @@ public class BooksWithByteFile {
 	public void setBooks(Books books) {
 		this.books = books;
 	}
-
 
 }

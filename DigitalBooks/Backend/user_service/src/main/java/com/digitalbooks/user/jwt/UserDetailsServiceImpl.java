@@ -9,13 +9,13 @@ import org.springframework.stereotype.Component;
 
 
 import com.digitalbooks.user.model.Users;
-import com.digitalbooks.user.repository.UserRepository;
+import com.digitalbooks.user.repository.IUserRepository;
 
 @Component
 class UserDetailsServiceImpl implements UserDetailsService {
 
    @Autowired
-   UserRepository userRepo;
+   IUserRepository userRepo;
    
     @Override
     public UserDetails loadUserByUsername(String userName)  {

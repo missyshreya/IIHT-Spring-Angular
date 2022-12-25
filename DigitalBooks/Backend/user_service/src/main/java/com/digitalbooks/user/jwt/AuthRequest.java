@@ -1,8 +1,5 @@
 package  com.digitalbooks.user.jwt;
 
-
-
-
 public class AuthRequest {
 
     private String userName;

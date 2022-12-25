@@ -1,8 +1,5 @@
 package com.digitalbooks.user.dto;
-
 import java.util.Date;
-
-
 
 public class UsersDTO {
 
@@ -17,7 +14,6 @@ public class UsersDTO {
 	private RolesDTO roles;
 
 	private Date createdDate;
-	
 	
 	
 	public UsersDTO() {

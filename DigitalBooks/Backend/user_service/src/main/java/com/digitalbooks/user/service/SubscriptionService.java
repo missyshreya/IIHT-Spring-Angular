@@ -17,17 +17,17 @@ import com.digitalbooks.user.model.Subscription;
 import com.digitalbooks.user.model.Users;
 import com.digitalbooks.user.payload.response.MessageResponse;
 import com.digitalbooks.user.pyload.request.SubscriptionPayLoad;
-import com.digitalbooks.user.repository.SubscriptionRepository;
-import com.digitalbooks.user.repository.UserRepository;
+import com.digitalbooks.user.repository.ISubscriptionRepository;
+import com.digitalbooks.user.repository.IUserRepository;
 
 @Service
 public class SubscriptionService {
 	
 	@Autowired
-	private SubscriptionRepository subscriptionRepository;
+	private ISubscriptionRepository subscriptionRepository;
 	
 	@Autowired
-	private UserRepository userRepository;
+	private IUserRepository userRepository;
 	
 
 	public ResponseEntity<?> subscribe(int bookId,Books responseBook, SubscriptionPayLoad subscribe) {

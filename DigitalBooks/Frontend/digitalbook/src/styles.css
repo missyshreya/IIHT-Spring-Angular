@@ -4,16 +4,6 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
-    display: flex;
-    flex-direction: column;
+    
 }
 
-nav, footer{
-    flex: none;
-}
-
-main{
-    overflow-y:scroll;
-    -webkit-overflow-scrolling: touch;
-    flex: auto;
-}

@@ -11,12 +11,12 @@ import org.springframework.stereotype.Service;
 import com.digitalbooks.user.dto.UsersDTO;
 import com.digitalbooks.user.model.Roles;
 import com.digitalbooks.user.model.Users;
-import com.digitalbooks.user.repository.UserRepository;
+import com.digitalbooks.user.repository.IUserRepository;
 
 @Service
 public class UserService {
 	@Autowired
-	private UserRepository userRepository;
+	private IUserRepository userRepository;
 	
 	public void saveUser(UsersDTO userdto) {
 		Users user = new Users();
