@@ -11,6 +11,6 @@ public class CommonExceptionHandler {
     @ExceptionHandler(value = { Exception.class })
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public String unknownException(Exception ex) {
-       return "Oops, something went wrong!!!";
+       return "Sorry!! Something went wrong!!";
     }
 }

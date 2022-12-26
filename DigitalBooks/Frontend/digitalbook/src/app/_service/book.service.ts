@@ -11,7 +11,7 @@ import { SubscriptionPayLoad } from '../_model/subscriptionpayload.model';
 
 
 
-const commonURl="http://localhost:8081/digitalbooks/"
+const commonURl="http://ec2-18-183-180-64.ap-northeast-1.compute.amazonaws.com:8081/digitalbooks/"
 @Injectable({
   providedIn: 'root'
 })

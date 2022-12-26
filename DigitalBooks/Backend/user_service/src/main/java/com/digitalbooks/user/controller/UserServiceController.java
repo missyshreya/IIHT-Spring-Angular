@@ -45,7 +45,7 @@ import com.digitalbooks.user.payload.response.MessageResponse;
 import com.digitalbooks.user.service.UserService;
 
 @RestController
-@CrossOrigin(origins = {"http://localhost:4200", "https://digitalbook-frontend.s3.amazonaws.com"})
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping(value = "/digitalbooks")
 public class UserServiceController {
 

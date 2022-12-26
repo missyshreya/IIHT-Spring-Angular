@@ -23,6 +23,7 @@ import { FooterComponent } from './Components/footer/footer.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,7 @@ import { FooterComponent } from './Components/footer/footer.component';
     LoginComponent,
     HeaderComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,  
   ],
   imports: [
     BrowserModule,

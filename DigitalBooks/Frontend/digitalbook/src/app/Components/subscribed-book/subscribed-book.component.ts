@@ -25,6 +25,7 @@ export class SubscribedBookComponent implements OnInit {
   thumbnail: any[];
   res: number;
   subscriptionId:Subscription;
+  dateOfSubscription:Subscription;
   subdIdList = new Map<number, Subscription>();
   isOpenBook: boolean=false;
   content: any;
@@ -40,8 +41,7 @@ export class SubscribedBookComponent implements OnInit {
   constructor(private bookService: BookService, private userService: UserService,
      private sanitizer: DomSanitizer, private route: ActivatedRoute) {
      
-      this.parameter=this.route.snapshot.paramMap.get('id');
-   
+      this.parameter=this.route.snapshot.paramMap.get('id');   
   }
 
   ngOnInit(): void { 

@@ -27,7 +27,7 @@ import com.digitalbooks.user.payload.response.MessageResponse;
 import com.digitalbooks.user.pyload.request.SubscriptionPayLoad;
 import com.digitalbooks.user.service.SubscriptionService;
 
-@CrossOrigin(origins = {"http://localhost:4200", "https://digitalbook-frontend.s3.amazonaws.com"})
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping(value = "/digitalbooks")
 public class SubscriptionController {

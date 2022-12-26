@@ -32,23 +32,15 @@ public class BookServiceController {
 	@Autowired
 	BookService bookService;
 
-	
-	@GetMapping("/test")
-	public String test() {
-		return "It is User Service";
-	}
-	
 	@PostMapping("/author/{author-id}")
-	public int saveBook( @RequestBody BooksWithByteFile book,
-			@PathVariable("author-id") int authorId) {
+	public int saveBook(@RequestBody BooksWithByteFile book, @PathVariable("author-id") int authorId) {
 		Blob blob = null;
 		try {
-	    if(book!=null && book.getFile()!=null) {
-	    	blob = new javax.sql.rowset.serial.SerialBlob(book.getFile());
-	    }
-     	
-			
-		}  catch ( Exception e) {
+			if (book != null && book.getFile() != null) {
+				blob = new javax.sql.rowset.serial.SerialBlob(book.getFile());
+			}
+
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return bookService.saveBook(blob, book, authorId);
@@ -56,25 +48,23 @@ public class BookServiceController {
 	}
 
 	@PostMapping("/author/{author-id}/{book-id}")
-	public Books updateBook(@RequestBody BooksWithByteFile book,
-			@PathVariable("author-id") int authorId, @PathVariable("book-id") int bookId
-			) {
+	public Books updateBook(@RequestBody BooksWithByteFile book, @PathVariable("author-id") int authorId,
+			@PathVariable("book-id") int bookId) {
 		Blob blob = null;
 		try {
-			 if(book!=null && book.getFile()!=null) {
-			    	blob = new javax.sql.rowset.serial.SerialBlob(book.getFile());
-			    }
-		}  catch (SQLException e) {
+			if (book != null && book.getFile() != null) {
+				blob = new javax.sql.rowset.serial.SerialBlob(book.getFile());
+			}
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return bookService.updateBook(blob, book,authorId,bookId);
+		return bookService.updateBook(blob, book, authorId, bookId);
 	}
 
 	@GetMapping("/searchBook/logo/{category}/{title}/{author}/{price}/{publisher}")
 	public byte[] getBookLogo(@PathVariable("category") String category, @PathVariable("title") String title,
 			@PathVariable("author") int authorId, @PathVariable("price") int price,
 			@PathVariable("publisher") String publisher) {
-		System.out.println("here");
 		return bookService.getBookForLogo(category, title, authorId, price, publisher);
 
 	}
@@ -84,8 +74,8 @@ public class BookServiceController {
 	public Books getBook(@PathVariable("category") String category, @PathVariable("title") String title,
 			@PathVariable("author") int authorId, @PathVariable("price") int price,
 			@PathVariable("publisher") String publisher) {
-		Books book= bookService.getBookForSearch(category, title, authorId, price, publisher);
-		return book ;
+		Books book = bookService.getBookForSearch(category, title, authorId, price, publisher);
+		return book;
 
 	}
 
@@ -96,7 +86,7 @@ public class BookServiceController {
 
 	@GetMapping("/getBook/subscribed/logo/{book-id}")
 	public byte[] getBookLogoForSubscribedBook(@PathVariable("book-id") int bookId) {
-		return  bookService.getSubscribedBookForLogo(bookId);
+		return bookService.getSubscribedBookForLogo(bookId);
 
 	}
 
@@ -122,27 +112,26 @@ public class BookServiceController {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND)
 					.body(new MessageResponse("The book does not belong to the mentioned author"));
 
-		} else if (block.equalsIgnoreCase("yes") || block.equalsIgnoreCase("no") ) {
-			Books savedBook = bookService.blockBook(bookId, block);
+		} else if (block.equalsIgnoreCase("yes") || block.equalsIgnoreCase("no")) {
+			bookService.blockBook(bookId, block);
 			return ResponseEntity.ok(new MessageResponse("Updated book status"));
 		}
-		
+
 		else {
 			return ResponseEntity.ok(new MessageResponse("Not a proper instruction"));
 
 		}
 	}
-	
-	
-	
+
 	@GetMapping("searchBook/count/book/{user-id}")
 	public int getCountofWrittenBook(@PathVariable("user-id") int userId) {
 		return bookService.getCount(userId);
-		
+
 	}
+
 	@GetMapping("searchBook/createdbook/logo/{user-id}")
 	public byte[][] getBookLogoForCreatedBook(@PathVariable("user-id") int userId) {
-		return  bookService.getCreatedBookForLogo(userId);
+		return bookService.getCreatedBookForLogo(userId);
 
 	}
 
@@ -151,18 +140,21 @@ public class BookServiceController {
 	public List<Books> getBookForCreatedBook(@PathVariable("user-id") int userId) {
 		return bookService.getCreatedBook(userId);
 	}
-	
-	
+
 	@GetMapping("searchBook/logo/{book-id}")
 	public byte[] getBookLogoForUpdation(@PathVariable("book-id") int bookId) {
-		return  bookService.getBookLogoForUpdation(bookId);
+		return bookService.getBookLogoForUpdation(bookId);
 
 	}
-	
+
 	@GetMapping("searchBook/{book-id}")
 	public Books getBookForUpdation(@PathVariable("book-id") int bookId) {
 		return bookService.getBookForUpdation(bookId);
 	}
 	
+	@GetMapping("/test")
+	public String test() {
+		return "Hi i am User Service";
+	}
 
 }

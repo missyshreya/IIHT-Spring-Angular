@@ -13,7 +13,7 @@ export class JwtInterceptor implements HttpInterceptor {
     const req1 = /searchBook/gi;
    
     // add authorization header with jwt token if available
-    console.log("Coming interceptor " + request.url.search(req) + " "+ request.url.search(req1))
+    console.log("JWT interceptor " + request.url.search(req) + " "+ request.url.search(req1))
     if (request.url.search(req) === -1 || request.url.search(req1) ===-1) {
 
       let currentUser = this.authenticationService.currentUserValue;

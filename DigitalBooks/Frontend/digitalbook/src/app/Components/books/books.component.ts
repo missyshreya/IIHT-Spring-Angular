@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Book } from '../../_model/book.model';
 import { BookService } from '../../_service/book.service';
 import {UserService} from '../../_service/user.service';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -39,6 +38,7 @@ export class BooksComponent implements OnInit {
     private userService: UserService) {
 
       this.currentUser = this.userService.currentUserValue;
+
      }
 
   ngOnInit(): void {
@@ -109,5 +109,12 @@ export class BooksComponent implements OnInit {
      
   }
 
+notify(){
+  alert("To read this book, kindly signup!");
+  this.router.navigate(["signup"]);
+}
+
 
 }
+
+
