@@ -132,11 +132,11 @@ export class SubscribedBookComponent implements OnInit {
     };
     this.subscribedbook=null;
     this.subscribedbookError=null;
-    this.bookService.getBookBySubscriptionId(this.currentUser.email,formData.subscriptionId).
+    this.bookService.getSubscriptionDetails(this.currentUser.email,formData.subscriptionId).
     subscribe({
-      next:(data)=>{console.log("getBookBySubscriptionId "+ data);
+      next:(data)=>{console.log("getSubscriptionDetails "+ data);
      this.subscribedbook= data},
-      error: (err)=>{console.log("getBookBySubscriptionId "+ err);
+      error: (err)=>{console.log("getSubscriptionDetails "+ err);
         this.subscribedbookError= err;}
     })
   }

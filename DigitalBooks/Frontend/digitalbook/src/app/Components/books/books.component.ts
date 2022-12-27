@@ -75,7 +75,6 @@ export class BooksComponent implements OnInit {
         };
   
         console.log("Form DATA: "+formData.title);
-       // this.loading = true;
          const observable =  this.bookService.getSeachedBooks(formData.category, formData.title, formData.author,formData.price,formData.publisher );
         observable.subscribe({
           next:(data:any)=> {

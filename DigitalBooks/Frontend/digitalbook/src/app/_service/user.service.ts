@@ -5,7 +5,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { User } from '../_model/user.model';
 import { Role } from '../_model/role.model';
-
+//const commonUrl="http://localhost:8081/digitalbooks/";
 const commonUrl="http://ec2-18-183-180-64.ap-northeast-1.compute.amazonaws.com:8081/digitalbooks/";
 const url = commonUrl+"sign-up";
 const urlSignIn = commonUrl+"sign-in"
@@ -44,7 +44,7 @@ export class UserService {
       // login successful if there's a jwt token in the response
       console.log(jwtResponse);
       if (jwtResponse && jwtResponse.accessToken) {
-          // store user details and jwt token in local storage to keep user logged in between page refreshes
+          // storing our user details and jwt token in local storage to keep user logged in between page refreshes
           localStorage.setItem('currentUser', JSON.stringify(jwtResponse));
           this.currentUserSubject.next(jwtResponse);
       }

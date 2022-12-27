@@ -10,7 +10,18 @@
     *ngIf="!isLoggedInFlag">
     <a routerLink="#" class="navbar-brand"
       ><span class="h3" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Digital Books</span></a>
-      <!-- Right links -->
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto d-flex flex-row mt-3 mt-lg-0">
+        <li class="nav-item text-center mx-2 mx-lg-1">
+          <a class="nav-link active" aria-current="page" routerLink="">
+            <div>
+              <i class="fas fa-home fa-lg mb-1"></i>
+            </div>
+            Home
+          </a>
+        </li>
+        </ul>
+        <!-- Right links -->
      <ul class="navbar-nav ms-auto d-flex flex-row mt-3 mt-lg-0">
       <li class="nav-item text-center mx-2 mx-lg-1">
         <a routerLink="/signup" class="nav-link">
@@ -36,6 +47,17 @@
     class="navbar navbar-expand-lg navbar-dark gradient-custom"
     *ngIf="isLoggedInFlag && isAuthorLoggedIn">
     <a routerLink="/createbooks" class="navbar-brand"><span class="h5" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Digital Books</span></a>
+    <!-- Left links -->
+    <ul class="navbar-nav me-auto d-flex flex-row mt-3 mt-lg-0">
+      <li class="nav-item text-center mx-2 mx-lg-1">
+        <a class="nav-link active" aria-current="page" routerLink="">
+          <div>
+            <i class="fas fa-home fa-lg mb-1"></i>
+          </div>
+          Home
+        </a>
+      </li>
+      </ul>
     <ul class="navbar-nav">
       <li class="nav-item text-center mx-2 mx-lg-1">
         <a class="nav-link" routerLink="/createbooks"><div>
@@ -62,6 +84,17 @@
     class="navbar navbar-expand-lg navbar-dark gradient-custom"
     *ngIf="isLoggedInFlag && isReaderLoggedIn">
     <a routerLink="#" class="navbar-brand"><span class="h5" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Digital Books</span></a>
+    <!-- Left links -->
+    <ul class="navbar-nav me-auto d-flex flex-row mt-3 mt-lg-0">
+      <li class="nav-item text-center mx-2 mx-lg-1">
+        <a class="nav-link active" aria-current="page" routerLink="">
+          <div>
+            <i class="fas fa-home fa-lg mb-1"></i>
+          </div>
+          Home
+        </a>
+      </li>
+      </ul>
     <ul class="navbar-nav">
       <li class="nav-item text-center mx-2 mx-lg-1">
         <a class="nav-link" routerLink="/"><div>

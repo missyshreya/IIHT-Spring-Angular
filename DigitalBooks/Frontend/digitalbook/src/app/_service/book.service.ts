@@ -10,7 +10,7 @@ import { SubscriptionPayLoad } from '../_model/subscriptionpayload.model';
 
 
 
-
+//const commonURl="http://localhost:8081/digitalbooks/"
 const commonURl="http://ec2-18-183-180-64.ap-northeast-1.compute.amazonaws.com:8081/digitalbooks/"
 @Injectable({
   providedIn: 'root'
@@ -28,8 +28,7 @@ export class BookService {
   let url = commonURl+"searchBook"
   url=url+"?category="+category+"&title="+title+"&author="+author+"&price="+price+"&publisher="+publisher;
  console.log("url: "+url)
-  return this.http.get(url);
-  //.pipe(map(response => response));
+  return this.http.get(url);  
 
  }
 
@@ -37,7 +36,6 @@ export class BookService {
   publisher:string, active:boolean, content:string)
 {
   let savebookurl=commonURl+"author"
-  console.log("Ami create a")
   const formdata: FormData = new FormData(); 
   const bookInfo:Book = {
     //logo:logo,
@@ -55,8 +53,7 @@ export class BookService {
 public updateBooks(logo:File, category:string, title:string, authorId:number, price:number,
   publisher:string, active:boolean, content:string, bookId:number)
 {
-  let updatebookurl= commonURl+"author"
-  console.log("Ami create a")
+  let updatebookurl= commonURl+"author"  
   const formdata: FormData = new FormData(); 
   const bookInfo:Book = {
     //logo:logo,
@@ -71,8 +68,7 @@ public updateBooks(logo:File, category:string, title:string, authorId:number, pr
 }
 
   public uploadlogo(logo:File) {
-    let uploadlogourl=commonURl+"uploadlogo"
-    console.log("Ami upload a")
+    let uploadlogourl=commonURl+"uploadlogo"    
     const formdata: FormData = new FormData();  
     formdata.append('file',logo);
     return this.http.post(uploadlogourl, formdata)
@@ -140,5 +136,9 @@ getBookBySubscriptionId(emailId:string,subscriptionId: any) {
   return this.http.get(fetchbookfBySubscriptionIdurl);
 }
 
+getSubscriptionDetails(emailId:string,subscriptionId: any){
+  let fetchbookfBySubscriptionIdurl = commonURl+"readers/"+emailId+"/books/"+subscriptionId+"/sdetails";
+  return this.http.get(fetchbookfBySubscriptionIdurl);
+}
 
 }

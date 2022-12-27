@@ -1,7 +1,7 @@
 <section class="vh-50">
   <div class="container h-100" *ngIf="!isOpenBook && parameter!='subscription'">
     <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-lg-12 col-xl-11">
+      <div class="col-lg-7 col-xl-4">
         <div class="card text-black" style="border-radius: 25px;">
           <div class="card-body p-md-5">
             <div class="row justify-content-center">
@@ -24,7 +24,7 @@
                         <br />
                         <span style="word-wrap: break-word;"><button
                             (click)="unsubscribe(subdIdList.get(subscribeBook.books.id).id)"
-                            class="btn btn-primary">Unsubscribe</button>
+                            class='btn btn-primary' style="background-color: rgb(207, 113, 194); color: yellow; font-weight: bold;">Unsubscribe</button>
                         </span>
                         <hr />
 
@@ -32,8 +32,8 @@
 
                   </table>
                   <div>
-                    <p *ngIf="unsubscribeMessage!=null">{{unsubscribeMessage.message}}</p>
-                    <p *ngIf="unsubscribeErrorMessage!=null">{{unsubscribeErrorMessage.message}}</p>
+                    <p style="color: green;" *ngIf="unsubscribeMessage!=null">{{unsubscribeMessage.message}}</p>
+                    <p style="color: red;" *ngIf="unsubscribeErrorMessage!=null">{{unsubscribeErrorMessage.message}}</p>
                   </div>
 
                 </div>
@@ -49,24 +49,24 @@
 <section class="vh-100">
   <div class="container h-100" *ngIf="isOpenBook && parameter!='subscription'">
     <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-lg-12 col-xl-11">
+      <div class="col-lg-7 col-xl-4">
         <div class="card text-black" style="border-radius: 25px;">
           <div class="card-body p-md-5">
             <div class="row justify-content-center">
               <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Start Reading</p>
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4"> </p>
 
 
                 <table>
                   <tbody style="background-color: white; ">
                     <tr *ngIf="contentError===undefined">
-                      <p style="word-wrap: break-word; font-weight: bold; font-size: 30px;">{{content.title}}</p>
+                      <p style="word-wrap: break-word; font-weight: bold; font-size: 30px; color: darkmagenta;">{{content.title}}</p>
                       <hr />
-                      <p style="word-wrap: break-word; font-size: 20px;">{{content.content}}</p>
+                      <a href="{{content.content}}" target="_blank" style="font-size: 25px;">Click me to read</a>                    
                     </tr>
                     <tr *ngIf="content===undefined">
-                      <td style="word-wrap: break-word; font-weight: bold;">{{contentError}}</td>
+                      <td style="word-wrap: break-word; font-weight: bold; color: red;">{{contentError}}</td>
 
                     </tr>
 
@@ -86,12 +86,12 @@
 <section class="vh-50">
   <div class="container h-100" *ngIf="parameter=='subscription'">
     <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-lg-12 col-xl-11">
+      <div class="col-lg-7 col-xl-4">
         <div class="card text-black" style="border-radius: 25px;">
           <div class="card-body p-md-5">
             <div class="row justify-content-center">
               <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Check my subscription details</p>
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4"> </p>
                 <div class="card-body">
 
                   <form [formGroup]="searchSubscriptionForm" (submit)="onSubmitToSearchForSubscription()">
@@ -99,25 +99,24 @@
                       <div>
                         <input type='text' formControlName="subscriptionId" class='form-control'
                           [ngClass]="{ 'is-invalid': submitted && f['subscriptionId'].errors }" required
-                          placeholder="Unique subscription id" />
+                          placeholder="Subscription ID" />
                         <div *ngIf="submitted && f['subscriptionId'].errors" class="invalid-feedback">
                           <div *ngIf="f['subscriptionId'].errors['required']">Subscription id is required</div>
                         </div>
                         <br />
                         <div class="row">
                           <div class="col-sm-5 mx-auto">
-                            <input type="submit" class='btn btn-outline-primary btn-block btn-lg' value='Search'
-                              id='search' />
+                            <input type="submit" class='btn btn-primary btn-lg' value='Search' id='search' style="background-color: rgb(207, 113, 194); color: yellow;"/>
                           </div>
                         </div>
                         <!-- <p *ngIf="subscribedbook!=null">{{subscribedbook}}</p> -->
-                        <p *ngIf="subscribedbookError!=null">{{subscribedbookError}}</p>
+                        <p  style="color: red;" *ngIf="subscribedbookError!=null">{{subscribedbookError}}</p>
                       </div>
                     </div>
                   </form>
                   <div>
-                    <p *ngIf="unsubscribeMessage!=null">{{unsubscribeMessage.message}}</p>
-                    <p *ngIf="unsubscribeErrorMessage!=null">{{unsubscribeErrorMessage.message}}</p>
+                    <p style="color: green;" *ngIf="unsubscribeMessage!=null">{{unsubscribeMessage.message}}</p>
+                    <p style="color: red;" *ngIf="unsubscribeErrorMessage!=null">{{unsubscribeErrorMessage.message}}</p>
                   </div>
 
                 </div>
@@ -133,20 +132,24 @@
 <section class="vh-100">
   <div class="container h-100" *ngIf="subscribedbook!=null">
     <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-lg-12 col-xl-11">
+      <div class="col-lg-7 col-xl-4">
         <div class="card text-black" style="border-radius: 25px;">
           <div class="card-body p-md-5">
             <div class="row justify-content-center">
               <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Invoice</p>
+                <p class="text-center h2 fw-bold mb-5 mx-1 mx-md-4 mt-4" style="color: rgb(107, 6, 107);">Invoice</p>
 
                 <div class="card-body">
                   <table>
                     <tbody style="background-color: white; ">
                       <tr *ngIf="subscribedbook!=null">
-                        <p style="word-wrap: break-word; font-weight: bold; font-size: 30px;">{{dateOfSubscription}}</p>
-
+                        <ul style="font-weight: bold; font-size: 15px;">Book ID: {{subscribedbook.bookId}}</ul> 
+                        <ul style="font-weight: bold; font-size: 15px;">Date of the Subscription: {{subscribedbook.dateOfSubscription}} {{subscribedbook.bookId}}</ul>
+                        <ul *ngIf="subscribedbook.bookId==0"
+                        style="font-weight: bold; font-size: 15px;">Status: Cancelled </ul>
+                        <ul *ngIf="subscribedbook.bookId==1"
+                        style="font-weight: bold; font-size: 15px;">Status: Not Cancelled </ul>
                       </tr>
 
                     </tbody>

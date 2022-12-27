@@ -88,6 +88,7 @@ public class SubscriptionController {
 	}
 
 	
+	
 	/**Get Subscription ID for front end**/
 	@GetMapping("readers/{user-id}/{book-id}")
 	public ResponseEntity<?> getSubscriptionId(@PathVariable("user-id") int userId, 
@@ -194,6 +195,16 @@ public class SubscriptionController {
 
 	}
 
+	@GetMapping("readers/{emailId}/books/{subscription-id}/sdetails")
+	public ResponseEntity<?> getSubscriptionDetails(@PathVariable("emailId") String email,
+			@PathVariable("subscription-id") String subscriptionId){
+				Subscription subscription = subscriptionService.fetchSubscriptionById(subscriptionId.trim());
+				return ResponseEntity.ok(subscription);
+			}
+			
+			
+			
+			
 	/**** Reader can read book content *****/
 	@GetMapping("readers/{emailId}/books/{subscription-id}/read")
 	public ResponseEntity<?> fetchBookContent(@PathVariable("emailId") String email,
@@ -228,6 +239,8 @@ public class SubscriptionController {
 		}
 
 	}
+	
+	
 
 	@PutMapping("readers/{email-id}/books/{subscription-id}/cancel-subscription")
 	public ResponseEntity<?> cancelSubscription(@PathVariable("email-id") String email,
