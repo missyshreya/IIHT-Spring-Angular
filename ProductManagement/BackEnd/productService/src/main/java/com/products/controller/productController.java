@@ -37,7 +37,7 @@ public class productController {
 	
 	@PostMapping("/updateproduct")
 	public ResponseEntity updateProductById(@RequestBody Product p) {
-		Integer id=p.getId();
+		Integer id=p.getP_id();
 		return productService.updateProductById(id, p);
 	}
 	

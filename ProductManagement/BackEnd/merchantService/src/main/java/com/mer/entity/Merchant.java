@@ -1,10 +1,11 @@
 package com.mer.entity;
 
-import java.util.Set;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,6 +23,9 @@ public class Merchant {
 	private Integer id;
 	private String name;
 	private String password;
-	private Set<Roles> role;
+	
+	@ManyToOne
+	@JoinColumn(name = "merchant_roles")
+	private Roles role;
 	
 }

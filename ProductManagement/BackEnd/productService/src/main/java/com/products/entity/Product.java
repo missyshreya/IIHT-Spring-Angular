@@ -22,7 +22,7 @@ public class Product {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)	
-	private Integer id;
+	private Integer p_id;
 	
 	
 	private String name;
