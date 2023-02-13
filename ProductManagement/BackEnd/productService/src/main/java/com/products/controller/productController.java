@@ -1,3 +1,4 @@
+
 package com.products.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.products.enity.product;
+import com.products.entity.Product;
 import com.products.service.productServiceImpl;
 
 @RestController
@@ -20,7 +21,7 @@ public class productController {
 	productServiceImpl productService;
 	
 	@PostMapping("/createproduct")
-	public ResponseEntity createProduct(@RequestBody product p) {
+	public ResponseEntity createProduct(@RequestBody Product p) {
 		return productService.createProduct(p);
 	}
 	
@@ -35,12 +36,12 @@ public class productController {
 	}
 	
 	@PostMapping("/updateproduct")
-	public ResponseEntity updateProductById(@RequestBody product p) {
+	public ResponseEntity updateProductById(@RequestBody Product p) {
 		Integer id=p.getId();
 		return productService.updateProductById(id, p);
 	}
 	
-	@DeleteMapping("deleteproduct/{id}")
+	@DeleteMapping("/deleteproduct/{id}")
 	public ResponseEntity deleteProductById(@PathVariable Integer id) {
 		return productService.deleteProductById(id);
 	}

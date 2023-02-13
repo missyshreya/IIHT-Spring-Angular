@@ -4,17 +4,17 @@ import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 
-import com.products.enity.product;
+import com.products.entity.Product;
 
 public interface IProductService {
 	
-	public ResponseEntity createProduct(product p);
+	public ResponseEntity createProduct(Product p);
 
 	public ResponseEntity findProductById(Integer id);
 	
-	public ResponseEntity<List<product>> getAllProducts();
+	public ResponseEntity<List<Product>> getAllProducts();
 	
-	public ResponseEntity updateProductById(Integer id, product p);
+	public ResponseEntity updateProductById(Integer id, Product p);
 	
 	public ResponseEntity deleteProductById(Integer id);
 }
